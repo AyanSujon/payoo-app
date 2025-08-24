@@ -41,22 +41,6 @@ document.getElementById("withdraw-btn").addEventListener("click", function(e){
 })
 
 
-
-
-
-
-// Toggling Features 
-
-// document.getElementById("add-button").addEventListener("click", function(){
-//     document.getElementById("cash-out-parent").style.display = "none"
-//     document.getElementById("add-money-parent").style.display = "block"
-// })
-// document.getElementById("cash-out-button").addEventListener("click", function(){
-//     document.getElementById("add-money-parent").style.display = "none"
-//     document.getElementById("cash-out-parent").style.display = "block"
-
-// })
-
 // Toggling Features comon function
 function handleToggle(id){
     const forms = document.getElementsByClassName("form");
@@ -66,24 +50,44 @@ function handleToggle(id){
     document.getElementById(id).style.display = "block"
 }
 
+// Function TO Toggle Buttom 
+function handleButtonToggle(id){
+    const formBtns = document.getElementsByClassName("form-btn");
+    // console.log(formBtns);
+    for(const btn of formBtns){
+        // console.log(btn)
+        btn.classList.remove("border-[#0874F2]", "bg-[#0874f20d]")
+        btn.classList.add("border-[#0808081a]")
+    }
+    document.getElementById(id).classList.remove("border-[#0808081a]");
+    document.getElementById(id).classList.add("border-[#0874F2]", "bg-[#0874f20d]");
+}
+
+// Toggling Features 
 document.getElementById("add-button").addEventListener("click", function(){
     handleToggle("add-money-parent");
+    handleButtonToggle("add-button");
 })
 document.getElementById("cash-out-button").addEventListener("click", function(){
     handleToggle("cash-out-parent");
+     handleButtonToggle("cash-out-button");
 })
 
 document.getElementById("transfer-money-button").addEventListener("click", function(){
     handleToggle("transfer-money-parent");
+     handleButtonToggle("transfer-money-button");
 })
 document.getElementById("get-bonus-button").addEventListener("click", function(){
     handleToggle("get-bonus-parent");
+    handleButtonToggle("get-bonus-button");
 })
 document.getElementById("pay-bill-button").addEventListener("click", function(){
     handleToggle("pay-bill-parent");
+    handleButtonToggle("pay-bill-button");
 })
 document.getElementById("transactions-button").addEventListener("click", function(){
     handleToggle("transactions-parent");
+    handleButtonToggle("transactions-button");
 })
 
 
